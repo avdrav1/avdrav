@@ -1,0 +1,5 @@
+run = "npm run build && npm start"
+entrypoint = "server.js"
+[deployment]
+build = ["npm", "ci", "&&", "npm", "run", "build"]
+run = ["npm", "start"]

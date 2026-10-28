@@ -1,0 +1,33 @@
+/* Avdrav — generated from the Avdrav design system tokens.json (SoundCloud-derived). Dark is the default theme. */
+:root,
+[data-theme="dark"] {
+  --surface: #121212;
+  --highlight: #303030;
+  --overlay: rgba(255, 255, 255, 0.4);
+  --primary: #ffffff;
+  --secondary: #999999;
+  --special: #ff5500;
+  --on-special: #ffffff;
+  --link: #699fff;
+  --focus: #044dd2;
+  --error: #d61348;
+  --success: #008850;
+  --platform-spotify: #1db954;
+  --platform-apple-music: #fb2d5b;
+  --platform-youtube: #ff0033;
+  --button-focus: 0 0 0 2px #044dd2 inset;
+  --link-focus: 0 0 0 2px #699fff;
+  --image-border: 0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  color-scheme: dark;
+}
+[data-theme="light"] {
+  --surface: #ffffff;
+  --highlight: #f3f3f3;
+  --overlay: rgba(18, 18, 18, 0.4);
+  --primary: #121212;
+  --secondary: #666666;
+  --link: #044dd2;
+  --link-focus: 0 0 0 2px #044dd2;
+  --image-border: 0 0 0 1px rgba(18, 18, 18, 0.15) inset;
+  color-scheme: light;
+}

@@ -1,0 +1,45 @@
+@import "./tokens.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-surface text-primary font-sans text-body antialiased; }
+  ::selection { background: var(--special); color: var(--on-special); }
+  :focus-visible { outline: none; box-shadow: var(--link-focus); border-radius: 4px; }
+}
+
+@layer components {
+  /* Button — 32px, four fills. See design system › Button. */
+  .ctl { @apply box-border inline-flex items-center justify-center gap-0.5x min-h-control py-0.75x px-1.5x rounded-4 text-h4 whitespace-nowrap cursor-pointer transition-opacity duration-200 select-none; }
+  .ctl:focus-visible { box-shadow: var(--button-focus); }
+  .ctl:active, .ctl[disabled] { opacity: 0.4; }
+  .ctl svg { @apply w-2x h-2x fill-current shrink-0; }
+  .ctl-primary { @apply bg-primary text-surface; }
+  .ctl-secondary { @apply bg-highlight text-primary; }
+  .ctl-tertiary { @apply bg-surface text-primary; }
+  .ctl-special { @apply bg-special text-on-special; }
+  .ctl-pill { @apply rounded-100; }
+  .ctl-small { @apply text-captions font-normal; }
+  .ctl:hover > span, .ctl:hover > svg { opacity: 0.4; }
+  .ctl-special:hover > span, .ctl-special:hover > svg { opacity: 1; }
+
+  /* Tag — 24px pill. */
+  .tag { @apply box-border inline-flex items-center h-tag py-0.25x px-1x rounded-100 bg-highlight text-primary text-body whitespace-nowrap cursor-pointer; }
+  .tag[aria-pressed="true"] { @apply bg-primary text-surface; }
+  .tag:focus-visible { box-shadow: var(--link-focus) inset; }
+
+  /* Eyebrow — heading6 uppercase. */
+  .eyebrow { @apply text-h6 uppercase text-secondary; }
+
+  /* Artwork — always carries the image border ring. */
+  .art { @apply relative overflow-hidden bg-highlight shadow-image-border; }
+  .art img { @apply block w-full h-full object-cover; }
+  .art::after { content: ""; @apply absolute inset-0 shadow-image-border pointer-events-none; }
+
+  /* Links */
+  .link-primary { @apply text-primary font-semibold hover:opacity-40 transition-opacity; }
+  .link-secondary { @apply text-secondary hover:opacity-40 transition-opacity; }
+  .link-standard { @apply text-link hover:underline; }
+}
